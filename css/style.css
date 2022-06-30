@@ -19,6 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 15px;
+  position: relative;
 }
 .wrapper .weather {
   width: 100%;
@@ -33,6 +34,23 @@ body {
   justify-content: space-between;
   flex-direction: column;
   position: relative;
+}
+.wrapper .weather .weather__loading {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .weather .weather__loading img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
 }
 .wrapper .weather .weather__header .weather__main .weather__city {
   font-size: 3rem;

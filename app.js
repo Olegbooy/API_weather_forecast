@@ -3,13 +3,8 @@
 const weatherBlock = document.getElementById('weather');
 
 async function loadWeather(e) {
-    weatherBlock.innerHTML = `
-        <div class="weather__loading">
-            <img src="loading.gif" alt="Loading...">
-        </div>
-    `;
 
-    const server = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Peremyshliany&appid=c7e4eb8adbd073b0c99eaa5756da3549";
+    const server = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=Peremyshlyany&appid=c7e4eb8adbd073b0c99eaa5756da3549";
     const response = await fetch(server, {
         method: 'GET',
     });
@@ -25,8 +20,10 @@ function getWeather(data) {
     const location = data.name;
     const temp = Math.round(data.main.temp);
     const feelsLike = Math.round(data.main.feels_like)
-    const weatherStatus = data.weather[0].main;
+    const weatherStatus = data.weather[0].description;
     const weatherIcon = data.weather[0].icon;
+    
+    console.log(data);
 
     //HTML LAYOUT
 
