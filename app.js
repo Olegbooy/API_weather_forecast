@@ -23,7 +23,6 @@ function getWeather(data) {
     const weatherStatus = data.weather[0].description;
     const weatherIcon = data.weather[0].icon;
     
-    console.log(data);
 
     //HTML LAYOUT
 
